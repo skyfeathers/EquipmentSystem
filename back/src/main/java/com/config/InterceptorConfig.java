@@ -28,12 +28,16 @@ public class InterceptorConfig extends WebMvcConfigurationSupport{
 	 */
 	@Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		// 勿用 /** + classpath:/front/，否则 /front/index.html 会映射到 front/front/index.html（多一层 front），导致入口 404
+		registry.addResourceHandler("/front/**")
+				.addResourceLocations("classpath:/front/");
+		registry.addResourceHandler("/admin/**")
+				.addResourceLocations("classpath:/admin/");
 		registry.addResourceHandler("/**")
-        .addResourceLocations("classpath:/resources/")
-        .addResourceLocations("classpath:/static/")
-        .addResourceLocations("classpath:/admin/")
-        .addResourceLocations("classpath:/front/")
-        .addResourceLocations("classpath:/public/");
+				.addResourceLocations(
+						"classpath:/resources/",
+						"classpath:/static/",
+						"classpath:/public/");
 		super.addResourceHandlers(registry);
     }
 }

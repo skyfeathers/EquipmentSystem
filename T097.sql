@@ -6,9 +6,9 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-DROP DATABASE IF EXISTS `t097`;
-CREATE DATABASE IF NOT EXISTS `t097` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `t097`;
+DROP DATABASE IF EXISTS `eps`;
+CREATE DATABASE IF NOT EXISTS `eps` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `eps`;
 
 DROP TABLE IF EXISTS `config`;
 CREATE TABLE IF NOT EXISTS `config` (
@@ -20,9 +20,9 @@ CREATE TABLE IF NOT EXISTS `config` (
 
 DELETE FROM `config`;
 INSERT INTO `config` (`id`, `name`, `value`) VALUES
-	(1, 'picture1', 'http://localhost:8080/springbootu6123/upload/picture1.jpg'),
-	(2, 'picture2', 'http://localhost:8080/springbootu6123/upload/picture2.jpg'),
-	(3, 'picture3', 'http://localhost:8080/springbootu6123/upload/picture3.jpg'),
+	(1, 'picture1', 'http://eps.fjznhl.com/eps/upload/picture1.jpg'),
+	(2, 'picture2', 'http://eps.fjznhl.com/eps/upload/picture2.jpg'),
+	(3, 'picture3', 'http://eps.fjznhl.com/eps/upload/picture3.jpg'),
 	(6, 'homepage', 'https://asoa-1305425069.cos.ap-shanghai.myqcloud.com/1669635627773202432.png');
 
 DROP TABLE IF EXISTS `peijiangoumai`;

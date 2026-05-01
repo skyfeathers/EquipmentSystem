@@ -1,10 +1,10 @@
 const base = {
     get() {
         return {
-            url : "http://localhost:8080/springbootu6123/",
-            name: "springbootu6123",
+            url : "http://localhost:8092/eps/",
+            name: "eps",
             // 退出到首页链接
-            indexUrl: 'http://localhost:8080/springbootu6123/front/index.html'
+            indexUrl: 'http://localhost:8092/eps/front/index.html'
         };
     },
     getProjectName(){

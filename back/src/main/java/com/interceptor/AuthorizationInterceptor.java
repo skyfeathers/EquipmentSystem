@@ -47,6 +47,20 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
         	response.setStatus(HttpStatus.OK.value());
             return false;
         }
+
+        // 去掉 servlet context-path（如 /eps），只匹配应用内路径，避免 excludePathPatterns("/front/**") 在部分环境下不匹配
+        String cp = request.getContextPath();
+        String ctx = cp != null ? cp : "";
+        String uri = request.getRequestURI();
+        if (uri != null && !ctx.isEmpty() && uri.startsWith(ctx)) {
+        	uri = uri.substring(ctx.length());
+        }
+        if (uri != null && !uri.startsWith("/")) {
+        	uri = "/" + uri;
+        }
+        if (uri != null && (uri.startsWith("/front/") || uri.startsWith("/static/"))) {
+        	return true;
+        }
         
         IgnoreAuth annotation;
         if (handler instanceof HandlerMethod) {

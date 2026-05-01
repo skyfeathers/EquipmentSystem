@@ -9,7 +9,7 @@ const base = {
     },
     getProjectName(){
         return {
-            projectName: "中小企业设备管理系统"
+            projectName: "智农设备管理系统"
         } 
     }
 }
